@@ -317,6 +317,34 @@
   }
   .brands-note{margin-top:20px; font-size:13px; color:var(--ink-muted);}
 
+  /* ---------- FORMATOS ---------- */
+  #formatos{background:var(--surface-alt); border-bottom:1px solid var(--hairline);}
+  .formats-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; margin-bottom:32px;}
+  .format-card{
+    border:1px solid var(--hairline);
+    border-radius:14px;
+    padding:24px 22px;
+    background:var(--surface-card);
+  }
+  .format-card .f-name{font-family:"Fraunces",serif; font-size:17px; font-weight:500; color:var(--ink); margin-bottom:8px;}
+  .format-card .f-desc{font-size:13.5px; color:var(--ink-muted); line-height:1.5;}
+  .formats-cta{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
+    border-top:1px solid var(--hairline); padding-top:28px;
+  }
+  .formats-cta p{margin:0; font-size:15px; color:var(--ink-2); max-width:460px;}
+  .formats-cta a{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:999px;
+    background:var(--gold);
+    color:#1c140d;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    white-space:nowrap;
+  }
+
   /* ---------- FOOTER ---------- */
   footer{
     position:relative;
@@ -591,6 +619,43 @@
       </a>
     </div>
     <p class="brands-note">Lista em expansão — novas parcerias são adicionadas a cada atualização. Clique num logo para visitar o site da marca.</p>
+  </div>
+</section>
+
+<section id="formatos">
+  <div class="wrap">
+    <p class="kicker">Como trabalhamos juntos</p>
+    <h2 class="title">Formatos de parceria</h2>
+    <div class="formats-grid">
+      <div class="format-card">
+        <div class="f-name">Post no Instagram</div>
+        <div class="f-desc">Publicação no feed, com legenda dedicada ao produto ou marca.</div>
+      </div>
+      <div class="format-card">
+        <div class="f-name">Reels dedicado ou integrado</div>
+        <div class="f-desc">Vídeo curto, com a marca como protagonista ou integrada ao conteúdo do dia.</div>
+      </div>
+      <div class="format-card">
+        <div class="f-name">Sequência de Stories</div>
+        <div class="f-desc">Conjunto de stories com link direto, ideal para tráfego e conversão.</div>
+      </div>
+      <div class="format-card">
+        <div class="f-name">Vídeo no YouTube</div>
+        <div class="f-desc">Inserção ou vídeo dedicado no canal da Comunidade Herdeiros do Reino.</div>
+      </div>
+      <div class="format-card">
+        <div class="f-name">Live temática</div>
+        <div class="f-desc">Participação ou apresentação ao vivo com menção à marca.</div>
+      </div>
+      <div class="format-card">
+        <div class="f-name">Inserção em conteúdo próprio</div>
+        <div class="f-desc">Menção dentro do livro "14 Passos" ou do quadro Pessoa Certa.</div>
+      </div>
+    </div>
+    <div class="formats-cta">
+      <p>Formatos flexíveis — conte sua ideia e montamos juntos a proposta ideal para sua marca.</p>
+      <a href="mailto:contatoconhecendoabiblia@gmail.com">Solicitar proposta</a>
+    </div>
   </div>
 </section>
 

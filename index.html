@@ -230,6 +230,28 @@
   .kpi .kpi-label{font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-muted); margin-bottom:10px;}
   .kpi .kpi-value{font-family:"Fraunces",serif; font-size:clamp(28px,3.4vw,38px); font-weight:600; color:var(--ink);}
   .kpi .kpi-delta{font-size:13px; color:var(--gold); margin-top:8px;}
+  .kpi-highlight{border-color:var(--gold); background:linear-gradient(160deg, rgba(184,134,60,0.14), var(--surface-card));}
+  .kpi-highlight .kpi-value{color:var(--gold);}
+
+  .reach-breakdown{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:1px;
+    background:var(--hairline);
+    border:1px solid var(--hairline);
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:40px;
+  }
+  .rb-item{
+    background:var(--surface-alt);
+    padding:16px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+  .rb-label{font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-muted);}
+  .rb-val{font-family:"Fraunces",serif; font-size:20px; font-weight:600; color:var(--ink);}
 
   .charts-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px;}
   .chart-card{
@@ -251,8 +273,10 @@
   .trend .dot:hover{fill:var(--gold); r:5.5;}
 
   /* ---------- PÚBLICO ---------- */
-  .publico-grid{display:grid; grid-template-columns:1fr 1.3fr; gap:56px;}
+  .publico-grid{display:grid; grid-template-columns:0.8fr 1fr 0.9fr; gap:48px;}
+  @media (max-width:980px){.publico-grid{grid-template-columns:1fr 1fr;}}
   @media (max-width:760px){.publico-grid{grid-template-columns:1fr;}}
+  .country-note{font-size:12.5px; color:var(--ink-muted); margin-top:16px; line-height:1.5;}
   .subhead{font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-muted); margin:0 0 22px;}
   .gender-bars{display:flex; flex-direction:column; gap:16px;}
   .gender-row{display:grid; grid-template-columns:90px 1fr 56px; align-items:center; gap:12px;}
@@ -262,8 +286,8 @@
   .gender-row .g-val{font-size:14px; color:var(--ink); text-align:right; font-variant-numeric:tabular-nums;}
 
   .age-bars{display:flex; flex-direction:column; gap:10px;}
-  .age-row{display:grid; grid-template-columns:52px 1fr 52px; align-items:center; gap:12px;}
-  .age-row .a-label{font-size:13px; color:var(--ink-muted); font-variant-numeric:tabular-nums;}
+  .age-row{display:grid; grid-template-columns:64px 1fr 48px; align-items:center; gap:10px;}
+  .age-row .a-label{font-size:12.5px; color:var(--ink-muted); font-variant-numeric:tabular-nums; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
   .age-row .a-track{display:block; height:14px; border-radius:5px; background:var(--hairline-2); position:relative;}
   .age-row .a-fill{display:block; height:100%; border-radius:5px; background:var(--gold); position:relative; width:0; transition:width 1.1s cubic-bezier(.16,.84,.44,1);}
   .age-row .a-val{font-size:13px; color:var(--ink-2); text-align:right; font-variant-numeric:tabular-nums;}
@@ -425,7 +449,7 @@
 
       <div class="platform-card">
         <div class="p-name">Instagram</div>
-        <div class="p-stat">436 mil</div>
+        <div class="p-stat">437.304</div>
         <div class="p-stat-label">seguidores</div>
         <div class="p-sub"><span>1.869 posts</span><span>232 seguindo</span></div>
         <p class="p-bio">"Propósito, identidade e maturidade emocional. Café, Bíblia e verdade diária." — autor do livro "14 Passos".</p>
@@ -479,6 +503,15 @@
     <p class="metrics-sub">Todos os conteúdos · janela móvel de 30 dias</p>
 
     <div class="kpi-row">
+      <div class="kpi kpi-highlight">
+        <div class="kpi-label">Taxa de engajamento</div>
+        <div class="kpi-value">13,6%</div>
+        <div class="kpi-delta">interações ÷ contas alcançadas</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Contas alcançadas</div>
+        <div class="kpi-value">5.245.052</div>
+      </div>
       <div class="kpi">
         <div class="kpi-label">Visualizações</div>
         <div class="kpi-value">18.216.085</div>
@@ -493,6 +526,13 @@
         <div class="kpi-value">715.429</div>
         <div class="kpi-delta">42% seguidores · 58% não seguidores</div>
       </div>
+    </div>
+
+    <div class="reach-breakdown">
+      <div class="rb-item"><span class="rb-label">Reels</span><span class="rb-val">4,7 mi</span></div>
+      <div class="rb-item"><span class="rb-label">Stories</span><span class="rb-val">811 mil</span></div>
+      <div class="rb-item"><span class="rb-label">Posts</span><span class="rb-val">29 mil</span></div>
+      <div class="rb-item"><span class="rb-label">Ao vivo</span><span class="rb-val">951</span></div>
     </div>
 
     <div class="charts-row">
@@ -564,13 +604,13 @@
         <div class="gender-bars">
           <div class="gender-row">
             <span class="g-label">Mulheres</span>
-            <span class="g-track"><span class="g-fill" data-w="69.1%" style="background:var(--gold);"></span></span>
-            <span class="g-val">69,1%</span>
+            <span class="g-track"><span class="g-fill" data-w="70.9%" style="background:var(--gold);"></span></span>
+            <span class="g-val">70,9%</span>
           </div>
           <div class="gender-row">
             <span class="g-label">Homens</span>
-            <span class="g-track"><span class="g-fill" data-w="30.9%" style="background:var(--rust);"></span></span>
-            <span class="g-val">30,9%</span>
+            <span class="g-track"><span class="g-fill" data-w="29.1%" style="background:var(--rust);"></span></span>
+            <span class="g-val">29,1%</span>
           </div>
         </div>
       </div>
@@ -586,6 +626,18 @@
           <div class="age-row"><span class="a-label">55–64</span><span class="a-track"><span class="a-fill" data-w="5.5%"></span></span><span class="a-val">5,5%</span></div>
           <div class="age-row"><span class="a-label">65+</span><span class="a-track"><span class="a-fill" data-w="1.8%"></span></span><span class="a-val">1,8%</span></div>
         </div>
+      </div>
+
+      <div>
+        <p class="subhead">País</p>
+        <div class="age-bars">
+          <div class="age-row peak"><span class="a-label">Brasil</span><span class="a-track"><span class="a-fill" data-w="92.2%"></span></span><span class="a-val">92,2%</span></div>
+          <div class="age-row"><span class="a-label">Angola</span><span class="a-track"><span class="a-fill" data-w="2.2%"></span></span><span class="a-val">2,2%</span></div>
+          <div class="age-row"><span class="a-label">Portugal</span><span class="a-track"><span class="a-fill" data-w="1.7%"></span></span><span class="a-val">1,7%</span></div>
+          <div class="age-row"><span class="a-label">Moçamb.</span><span class="a-track"><span class="a-fill" data-w="1.1%"></span></span><span class="a-val">1,1%</span></div>
+          <div class="age-row"><span class="a-label">EUA</span><span class="a-track"><span class="a-fill" data-w="0.8%"></span></span><span class="a-val">0,8%</span></div>
+        </div>
+        <p class="country-note">São Paulo concentra 6% do público total — o restante está espalhado por cidades de todo o Brasil.</p>
       </div>
     </div>
   </div>

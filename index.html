@@ -352,6 +352,24 @@
   }
   .format-card .f-name{font-family:"Fraunces",serif; font-size:17px; font-weight:500; color:var(--ink); margin-bottom:8px;}
   .format-card .f-desc{font-size:13.5px; color:var(--ink-muted); line-height:1.5;}
+  .pricing-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+    margin-bottom:32px;
+  }
+  .price-item{
+    border:1px solid var(--hairline);
+    border-left:3px solid var(--gold);
+    border-radius:12px;
+    padding:18px 22px;
+    background:var(--surface-card);
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .price-label{font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-muted);}
+  .price-value{font-family:"Fraunces",serif; font-size:22px; font-weight:600; color:var(--ink);}
   .formats-cta{
     display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
     border-top:1px solid var(--hairline); padding-top:28px;
@@ -486,10 +504,10 @@
         <div class="destaque-label">visualizações acumuladas nos vídeos do quadro, somando todas as redes</div>
       </div>
       <div class="destaque-text">
-        <p>O quadro "Pessoa Certa" reúne conteúdos sobre como encontrar a pessoa certa à luz de princípios bíblicos — um dos pilares mais fortes do canal, com mais de 40 milhões de visualizações acumuladas. O tema deu origem a um livro físico, já vendido para milhares de pessoas.</p>
+        <p>O quadro "Pessoa Certa" reúne conteúdos sobre como encontrar a pessoa certa à luz de princípios bíblicos — um dos pilares mais fortes do canal, com mais de 40 milhões de visualizações acumuladas. O tema deu origem a um livro digital, já vendido para milhares de pessoas.</p>
         <div class="book-card">
           <div class="book-title">"14 Passos Bíblicos para Encontrar a Pessoa Certa"</div>
-          <div class="book-stat">+2.000<span>exemplares vendidos</span></div>
+          <div class="book-stat">+2.000<span>cópias digitais vendidas</span></div>
         </div>
       </div>
     </div>
@@ -704,8 +722,20 @@
         <div class="f-desc">Menção dentro do livro "14 Passos" ou do quadro Pessoa Certa.</div>
       </div>
     </div>
+
+    <div class="pricing-row">
+      <div class="price-item">
+        <span class="price-label">Vídeos de whitelisting</span>
+        <span class="price-value">a partir de R$ 2.500</span>
+      </div>
+      <div class="price-item">
+        <span class="price-label">Colaborações</span>
+        <span class="price-value">a partir de R$ 3.500</span>
+      </div>
+    </div>
+
     <div class="formats-cta">
-      <p>Formatos flexíveis — conte sua ideia e montamos juntos a proposta ideal para sua marca.</p>
+      <p>Formatos flexíveis — valores podem variar conforme o formato solicitado. Conte sua ideia e montamos juntos a proposta ideal para sua marca.</p>
       <a href="mailto:contatoconhecendoabiblia@gmail.com">Solicitar proposta</a>
     </div>
   </div>

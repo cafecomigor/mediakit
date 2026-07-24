@@ -183,35 +183,63 @@
   .gender-bars{display:flex; flex-direction:column; gap:16px;}
   .gender-row{display:grid; grid-template-columns:90px 1fr 56px; align-items:center; gap:12px;}
   .gender-row .g-label{font-size:14px; color:var(--ink-2);}
-  .gender-row .g-track{height:10px; border-radius:999px; background:var(--hairline-2); overflow:hidden;}
-  .gender-row .g-fill{height:100%; border-radius:999px;}
+  .gender-row .g-track{height:10px; border-radius:999px; background:var(--hairline-2); overflow:visible;}
+  .gender-row .g-fill{height:100%; border-radius:999px; position:relative; width:0; transition:width 1.1s cubic-bezier(.16,.84,.44,1);}
   .gender-row .g-val{font-size:14px; color:var(--ink); text-align:right; font-variant-numeric:tabular-nums;}
 
   .age-bars{display:flex; flex-direction:column; gap:10px;}
   .age-row{display:grid; grid-template-columns:52px 1fr 52px; align-items:center; gap:12px;}
   .age-row .a-label{font-size:13px; color:var(--ink-muted); font-variant-numeric:tabular-nums;}
   .age-row .a-track{height:14px; border-radius:5px; background:var(--hairline-2); position:relative;}
-  .age-row .a-fill{height:100%; border-radius:5px; background:var(--gold); position:relative;}
+  .age-row .a-fill{height:100%; border-radius:5px; background:var(--gold); position:relative; width:0; transition:width 1.1s cubic-bezier(.16,.84,.44,1);}
   .age-row .a-val{font-size:13px; color:var(--ink-2); text-align:right; font-variant-numeric:tabular-nums;}
   .age-row.peak .a-fill{background:linear-gradient(90deg, var(--gold), #d4a75c);}
   .age-row.peak .a-label, .age-row.peak .a-val{color:var(--ink); font-weight:600;}
 
+  .g-fill::after, .a-fill::after{
+    content:"▸";
+    position:absolute;
+    right:0; top:50%;
+    transform:translate(130%,-50%);
+    font-size:11px;
+    color:var(--ink);
+    opacity:0.85;
+    animation:nudge 1.6s ease-in-out infinite;
+  }
+  @keyframes nudge{
+    0%,100%{transform:translate(130%,-50%);}
+    50%{transform:translate(180%,-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .g-fill::after, .a-fill::after{animation:none;}
+    .g-fill, .a-fill{transition:none;}
+  }
+
   /* ---------- PARCERIAS ---------- */
   .brands-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px;}
   .brand-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
     border:1px solid var(--hairline);
     border-radius:14px;
-    padding:26px 20px;
+    padding:28px 20px 22px;
     text-align:center;
-    background:var(--surface-card);
-    font-family:"Fraunces",serif;
-    font-size:17px;
-    font-weight:500;
-    color:var(--ink-2);
-    letter-spacing:0.01em;
-    transition:border-color .15s ease, color .15s ease;
+    background:#efe4d0;
+    text-decoration:none;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
   }
-  .brand-card:hover{border-color:var(--gold); color:var(--ink);}
+  .brand-card:hover{border-color:var(--gold); transform:translateY(-3px); box-shadow:0 12px 24px rgba(0,0,0,0.28);}
+  .brand-card img{max-height:34px; max-width:130px; width:auto; object-fit:contain;}
+  .brand-card .brand-name{
+    font-family:"Inter",sans-serif;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:#5c4a30;
+  }
   .brands-note{margin-top:20px; font-size:13px; color:var(--ink-muted);}
 
   /* ---------- FOOTER ---------- */
@@ -317,6 +345,7 @@
       <div class="kpi">
         <div class="kpi-label">Novos seguidores</div>
         <div class="kpi-value">+20.335</div>
+        <div class="kpi-delta">▲ crescimento líquido no período</div>
       </div>
       <div class="kpi">
         <div class="kpi-label">Interações</div>
@@ -387,12 +416,12 @@
         <div class="gender-bars">
           <div class="gender-row">
             <span class="g-label">Mulheres</span>
-            <span class="g-track"><span class="g-fill" style="width:69.1%; background:var(--gold);"></span></span>
+            <span class="g-track"><span class="g-fill" data-w="69.1%" style="background:var(--gold);"></span></span>
             <span class="g-val">69,1%</span>
           </div>
           <div class="gender-row">
             <span class="g-label">Homens</span>
-            <span class="g-track"><span class="g-fill" style="width:30.9%; background:var(--rust);"></span></span>
+            <span class="g-track"><span class="g-fill" data-w="30.9%" style="background:var(--rust);"></span></span>
             <span class="g-val">30,9%</span>
           </div>
         </div>
@@ -401,13 +430,13 @@
       <div>
         <p class="subhead">Faixa etária</p>
         <div class="age-bars">
-          <div class="age-row"><span class="a-label">13–17</span><span class="a-track"><span class="a-fill" style="width:2.7%"></span></span><span class="a-val">2,7%</span></div>
-          <div class="age-row"><span class="a-label">18–24</span><span class="a-track"><span class="a-fill" style="width:13.6%"></span></span><span class="a-val">13,6%</span></div>
-          <div class="age-row peak"><span class="a-label">25–34</span><span class="a-track"><span class="a-fill" style="width:32.7%"></span></span><span class="a-val">32,7%</span></div>
-          <div class="age-row"><span class="a-label">35–44</span><span class="a-track"><span class="a-fill" style="width:27.7%"></span></span><span class="a-val">27,7%</span></div>
-          <div class="age-row"><span class="a-label">45–54</span><span class="a-track"><span class="a-fill" style="width:16.1%"></span></span><span class="a-val">16,1%</span></div>
-          <div class="age-row"><span class="a-label">55–64</span><span class="a-track"><span class="a-fill" style="width:5.5%"></span></span><span class="a-val">5,5%</span></div>
-          <div class="age-row"><span class="a-label">65+</span><span class="a-track"><span class="a-fill" style="width:1.8%"></span></span><span class="a-val">1,8%</span></div>
+          <div class="age-row"><span class="a-label">13–17</span><span class="a-track"><span class="a-fill" data-w="2.7%"></span></span><span class="a-val">2,7%</span></div>
+          <div class="age-row"><span class="a-label">18–24</span><span class="a-track"><span class="a-fill" data-w="13.6%"></span></span><span class="a-val">13,6%</span></div>
+          <div class="age-row peak"><span class="a-label">25–34</span><span class="a-track"><span class="a-fill" data-w="32.7%"></span></span><span class="a-val">32,7%</span></div>
+          <div class="age-row"><span class="a-label">35–44</span><span class="a-track"><span class="a-fill" data-w="27.7%"></span></span><span class="a-val">27,7%</span></div>
+          <div class="age-row"><span class="a-label">45–54</span><span class="a-track"><span class="a-fill" data-w="16.1%"></span></span><span class="a-val">16,1%</span></div>
+          <div class="age-row"><span class="a-label">55–64</span><span class="a-track"><span class="a-fill" data-w="5.5%"></span></span><span class="a-val">5,5%</span></div>
+          <div class="age-row"><span class="a-label">65+</span><span class="a-track"><span class="a-fill" data-w="1.8%"></span></span><span class="a-val">1,8%</span></div>
         </div>
       </div>
     </div>
@@ -419,14 +448,26 @@
     <p class="kicker">Parcerias</p>
     <h2 class="title">Quem já confiou</h2>
     <div class="brands-grid">
-      <div class="brand-card">Manual</div>
-      <div class="brand-card">Editora Vida</div>
-      <div class="brand-card">Brasil Paralelo</div>
-      <div class="brand-card">Maloa</div>
-      <div class="brand-card">Nordweg</div>
-      <div class="brand-card">Thomas Nelson Brasil</div>
+      <a class="brand-card" href="https://www.manual.com.br/" target="_blank" rel="noopener">
+        <img src="images/logos/manual.svg" alt="Manual"><span class="brand-name">Manual</span>
+      </a>
+      <a class="brand-card" href="https://www.editoravida.com.br/" target="_blank" rel="noopener">
+        <img src="images/logos/editora-vida.webp" alt="Editora Vida"><span class="brand-name">Editora Vida</span>
+      </a>
+      <a class="brand-card" href="https://www.brasilparalelo.com.br/" target="_blank" rel="noopener">
+        <img src="images/logos/brasil-paralelo.svg" alt="Brasil Paralelo"><span class="brand-name">Brasil Paralelo</span>
+      </a>
+      <a class="brand-card" href="https://maloario.com.br/" target="_blank" rel="noopener">
+        <img src="images/logos/maloa.png" alt="Maloa"><span class="brand-name">Maloa</span>
+      </a>
+      <a class="brand-card" href="https://www.nordweg.com/" target="_blank" rel="noopener">
+        <img src="images/logos/nordweg.png" alt="Nordweg"><span class="brand-name">Nordweg</span>
+      </a>
+      <a class="brand-card" href="https://thomasnelson.com.br/" target="_blank" rel="noopener">
+        <img src="images/logos/thomas-nelson.png" alt="Thomas Nelson Brasil"><span class="brand-name">Thomas Nelson Brasil</span>
+      </a>
     </div>
-    <p class="brands-note">Lista em expansão — novas parcerias são adicionadas a cada atualização.</p>
+    <p class="brands-note">Lista em expansão — novas parcerias são adicionadas a cada atualização. Clique num logo para visitar o site da marca.</p>
   </div>
 </section>
 
@@ -442,5 +483,25 @@
   </div>
 </footer>
 
+<script>
+  var publico = document.getElementById('publico');
+  if (publico && 'IntersectionObserver' in window) {
+    var played = false;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting && !played) {
+          played = true;
+          publico.querySelectorAll('.g-fill, .a-fill').forEach(function(el){
+            el.style.width = el.dataset.w;
+          });
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    io.observe(publico);
+  } else {
+    document.querySelectorAll('.g-fill, .a-fill').forEach(function(el){ el.style.width = el.dataset.w; });
+  }
+</script>
 </body>
 </html>

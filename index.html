@@ -332,6 +332,15 @@
   .brand-card:hover{border-color:var(--gold); transform:translateY(-3px); box-shadow:0 12px 24px rgba(0,0,0,0.28);}
   .brand-card img{max-height:34px; max-width:130px; width:auto; object-fit:contain;}
   .brand-card img.avatar{height:44px; width:44px; max-height:44px; border-radius:50%; object-fit:cover;}
+  .brand-card:not(:has(img)) .brand-name{
+    font-family:"Fraunces",serif;
+    font-size:16px;
+    font-weight:500;
+    text-transform:none;
+    letter-spacing:0.01em;
+    color:#5c4a30;
+    line-height:1.35;
+  }
   .brand-card .brand-name{
     font-family:"Inter",sans-serif;
     font-size:11px;
@@ -678,6 +687,9 @@
       </a>
       <a class="brand-card" href="https://grupoguesher.com.br/" target="_blank" rel="noopener">
         <img src="images/logos/grupo-guesher.svg" alt="Grupo Guesher"><span class="brand-name">Grupo Guesher</span>
+      </a>
+      <a class="brand-card" href="https://www.gov.il/en/departments/ministry_of_foreign_affairs" target="_blank" rel="noopener">
+        <span class="brand-name">Ministério das Relações Exteriores de Israel</span>
       </a>
     </div>
     <p class="brands-note">Lista em expansão — novas parcerias são adicionadas a cada atualização. Clique num logo para visitar o site da marca.</p>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Igor Reis — Proposta de Parceria</title>
+<meta name="description" content="Formatos de parceria e valores — Igor Reis (Cafecomigor).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface:      #1c140d;
+    --surface-alt:  #251b12;
+    --surface-card: #2a2016;
+    --ink:          #f5ead9;
+    --ink-2:        #cbb896;
+    --ink-muted:    #a89678;
+    --gold:         #b8863c;
+    --gold-soft:    rgba(184,134,60,0.16);
+    --rust:         #9c4530;
+    --hairline:     rgba(245,234,217,0.12);
+    --hairline-2:   rgba(245,234,217,0.06);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--surface);
+    color:var(--ink);
+    font-family:"Inter", -apple-system, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,.serif{font-family:"Fraunces", Georgia, serif;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 32px;}
+  section{padding:72px 0;}
+  .kicker{
+    font-size:12px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--gold); margin:0 0 16px;
+  }
+  p{color:var(--ink-2); line-height:1.75; font-size:16px;}
+
+  header.top{padding:80px 0 52px; text-align:center; border-bottom:1px solid var(--hairline); background:var(--surface-alt);}
+  header.top h1{font-size:clamp(34px,5vw,50px); font-weight:600; margin:0 0 14px;}
+  header.top .sub{max-width:520px; margin:0 auto; font-size:17px;}
+
+  .offer{
+    background:var(--surface-card);
+    border:1px solid var(--hairline);
+    border-radius:16px;
+    padding:40px 40px 36px;
+    margin-bottom:28px;
+  }
+  .offer-head{
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;
+    border-bottom:1px solid var(--hairline-2);
+    padding-bottom:22px; margin-bottom:24px;
+  }
+  .offer-name{font-size:clamp(22px,2.8vw,27px); font-weight:600; margin:0; color:var(--ink);}
+  .offer-name span{display:block; font-size:0.55em; font-weight:400; color:var(--ink-muted); margin-top:4px;}
+  .offer-price{font-family:"Fraunces",serif; font-size:clamp(28px,3.4vw,36px); font-weight:600; color:var(--gold); white-space:nowrap;}
+  .offer-price span{display:block; font-family:"Inter",sans-serif; font-size:11px; font-weight:400; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-muted); margin-top:4px;}
+
+  .offer ul{margin:0; padding:0; list-style:none;}
+  .offer li{position:relative; padding-left:26px; margin-bottom:14px; font-size:15.5px; color:var(--ink-2); line-height:1.6;}
+  .offer li::before{content:"—"; position:absolute; left:0; top:0; color:var(--gold);}
+  .offer li b{color:var(--ink); font-weight:600;}
+
+  .offer-note{
+    margin-top:24px; padding:18px 20px; border-left:3px solid var(--gold);
+    background:var(--gold-soft); border-radius:0 12px 12px 0;
+  }
+  .offer-note p{margin:0; font-size:14px; color:var(--ink); line-height:1.6;}
+  .offer-note p + p{margin-top:8px;}
+
+  footer{padding:72px 0 56px; text-align:center; border-top:1px solid var(--hairline); background:var(--surface-alt);}
+  footer h2{font-size:clamp(26px,3.6vw,34px); font-weight:600; margin:0 0 18px;}
+  footer p{max-width:440px; margin:0 auto 32px;}
+  .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{display:inline-block; padding:14px 30px; border-radius:999px; text-decoration:none; font-size:14px; font-weight:600;}
+  .btn.primary{background:var(--gold); color:#1c140d;}
+  .btn.ghost{border:1px solid var(--hairline); color:var(--ink-2);}
+  .fine{margin-top:40px; font-size:12px; color:var(--ink-muted);}
+  a.back{display:inline-block; margin-top:28px; font-size:13px; color:var(--ink-muted); text-decoration:none; border-bottom:1px solid var(--hairline);}
+
+  @media (max-width:600px){
+    section{padding:52px 0;}
+    .wrap{padding:0 20px;}
+    .offer{padding:28px 24px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="kicker">Igor Reis · Cafecomigor</p>
+    <h1>Formatos de parceria</h1>
+    <p class="sub">Dois jeitos de trabalharmos juntos — escolha o que faz mais sentido pra campanha, ou me conta a ideia e montamos uma proposta sob medida.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+
+    <div class="offer">
+      <div class="offer-head">
+        <h2 class="offer-name">Colaboração completa</h2>
+        <div class="offer-price">R$ 3.500<span>valor fechado</span></div>
+      </div>
+      <ul>
+        <li><b>Collab no Instagram</b> — vídeo publicado em parceria (Reels), aparecendo no perfil das duas partes.</li>
+        <li><b>Collab no TikTok</b> — mesmo formato, caso a marca queira os dois ambientes.</li>
+        <li><b>2 sequências de Stories</b>, com 3 telas cada — uma na primeira semana, outra cerca de 10 dias depois, mantendo a campanha viva ao longo do mês.</li>
+      </ul>
+    </div>
+
+    <div class="offer">
+      <div class="offer-head">
+        <h2 class="offer-name">Vídeo de whitelisting<span>UGC</span></h2>
+        <div class="offer-price">R$ 2.000<span>até 45 dias de uso</span></div>
+      </div>
+      <ul>
+        <li>Vídeo entregue <b>bruto, sem edição</b> — a marca recebe o material e cuida da finalização.</li>
+        <li>Uso autorizado em <b>anúncios pagos por até 45 dias</b> a partir da entrega.</li>
+        <li>Antes de fechar, preciso entender: <b>público-alvo</b>, <b>como o vídeo será veiculado</b>, <b>como minha imagem será usada</b> e o <b>período</b> desejado.</li>
+      </ul>
+      <div class="offer-note">
+        <p><b>Importante:</b> o valor acima cobre uso de até 45 dias. Se a campanha precisar da imagem por mais tempo, o valor é recalculado antes de fecharmos.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="kicker">Vamos conversar</p>
+    <h2>Conte sua ideia</h2>
+    <p>Me manda os detalhes da campanha — produto, prazo e objetivo — que eu te retorno com a proposta certa.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:contatoconhecendoabiblia@gmail.com">Enviar e-mail</a>
+      <a class="btn ghost" href="https://wa.me/5511942244200" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+    <a class="back" href="index.html">← Voltar pro mídia kit</a>
+    <p class="fine">Igor Reis · Cafecomigor — valores sujeitos a atualização conforme formato e período da campanha.</p>
+  </div>
+</footer>
+
+</body>
+</html>
